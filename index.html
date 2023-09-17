@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Personal Website</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet" />
+    <style>
+        .carousel-inner > .carousel-item > img {
+            height: 60vh;
+            object-fit: cover;
+        }
+        .carousel-control-prev {
+            position: absolute;
+            width: 10%;
+            height: 60vh;
+            padding: 10px;
+        }
+        .carousel-control-next {
+            position: absolute;
+            width: 10%;
+            height: 60vh;
+            padding: 10px;
+        }
+        .modal-body > p {
+            margin-top: 5%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Banner -->
+    <div class="row justify-content-around">
+        <div class="col-md-6 d-flex justify-content-center">
+            <!-- <h1 style="margin-left: 30%; margin-top: 20%; margin-bottom: 5%;">MAK Kin Wing</h1>
+            <p class="lead" style="margin-left: 30%;">Engineering | Robotics | Innovation </p> -->
+            <div style="margin-top: 20%;">
+                <h1>MAK Kin Wing</h1>
+                <p class="lead">Engineering | Robotics | Innovation </p>
+            </div>
+        </div>
+        <div class="col-md-5 d-flex" style="height: 95vh;">
+            <img src="img/mk.png" alt="Profile Picture" class="img-fluid align-self-end">
+        </div>
+    </div>
+    <hr>
+
+    <!-- Introduction -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6" data-bs-spy="scroll">
+                <img src="img/wro01.jpg" alt="Introduction Picture" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <h1 class="my-5">About me</h1>
+                <p>My passion towards engineering and robotics was ignited after the moment of this photo.
+                    This is me and my teamates winning the first place of an international robotics design competition.
+                    The key that brought us to success is our innovative design,
+                    which until now motivates me to create new engineering projects and ideas.</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <!-- Slider -->
+    <div class="container my-5">
+        <h1 class="mb-5">Featured work</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <!-- Carousel wrapper -->
+                <div id="carousel" class="carousel slide carousel-dark" data-mdb-ride="carousel">
+                    <!-- Inner -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active justify-content-center">
+                            <img src="img/balanceCar.png" class="d-block w-100" alt="balanceCar">
+                            <h3 class="mt-5">Automatic balance car</h3>
+                            <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#balanceCarModal">MORE</button>
+                        </div>
+                        <div class="carousel-item justify-content-center">
+                            <img src="img/matlabHumanoidSim.png" class="d-block w-100" alt="matlabHumanoidSim">
+                            <h3 class="mt-5">Biped robot simulation</h3>
+                            <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#matlabHumanoidSimModal">MORE</button>
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-mdb-target="#carousel" data-mdb-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-mdb-target="#carousel" data-mdb-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <!-- Dashboard -->
+    <div class="container my-5">
+        <h1 class="mb-5">Other work</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-5">
+                    <img src="img/3dPrinter.png" class="card-img-top" alt="3dPrinter">
+                    <div class="card-body">
+                        <h5 class="card-title">3D printer</h5>
+                        <p class="card-text">Before any engineering project, I needed a 3D printer for prototyping</p>
+                    </div>
+                </div>
+                <div class="card mb-5">
+                    <img src="img/gripper01.JPG" class="card-img-top" alt="gripper01">
+                    <div class="card-body">
+                        <h5 class="card-title">Origami gecko gripper</h5>
+                        <p class="card-text">It is a gripper design inspired by compliant mechanism
+                            which simplifies the process of manufacturing.</p>
+                        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#gripper">MORE</button>
+                    </div>
+                </div>
+                <div class="card mb-5">
+                    <img src="img/imageProcessing01.png" class="card-img-top" alt="imageProcessing01">
+                    <div class="card-body">
+                        <h5 class="card-title">Image processing</h5>
+                        <p class="card-text">This is one of the course work where students needed to apply image processing technique
+                            to practical uses such as A4 paper scanning, segmentation and face recognition.</p>
+                        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#imageProcessing">MORE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-5">
+                    <img src="img/levitator.JPG" class="card-img-top" alt="levitator">
+                    <div class="card-body">
+                        <h5 class="card-title">Acoustic levitator</h5>
+                        <p class="card-text">Making use of ultrasound, small particles can be levitated in air.</p>
+                        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#levitator">MORE</button>
+                    </div>
+                </div>
+                <div class="card mb-5">
+                    <img src="img/scaffoldingRobot.png" class="card-img-top" alt="scaffoldingRobot">
+                    <div class="card-body">
+                        <h5 class="card-title">Scaffolding robot</h5>
+                        <p class="card-text">This is one of the course work letting us to design an innovative mechatronic product.
+                            My group made a prototype of a scaffolding robot that can build scaffold.</p>
+                        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#scaffoldingRobot">MORE</button>
+                    </div>
+                </div>
+                <div class="card mb-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Web design</h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="balanceCarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4>Automatic balance car</h4>
+                    <p>Demostration of the automatic balance car running:</p>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/mtPYwuhejUw" allowfullscreen></iframe>
+                    </div>
+                    <p>These PCB are designed for fitting in the balance car model
+                        so that the center of gravity would be minimized and the structure would be more stable.</p>
+                    <img src="img/pcb01.png" class="img-fluid">
+                    <img src="img/pcb02.png" class="img-fluid">
+                    <p>The balance car was expected to follow a current-carrying wire
+                        that generate a changing magnetic field.
+                        A simulation and visualization of the environment was made,
+                        which was used for algorithm design and testing:</p>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/icGYgoqdPi0" allowfullscreen></iframe>
+                    </div>
+                    <p>The following is the GUI developed to ease the process of
+                        tuning parameter and state monitoring.</p>
+                    <img src="img/scProcessing01.png" class="img-fluid">
+                    <p>This is another GUI that allows user to capture and save
+                        real-time images from the camera for algorithm development.</p>
+                    <img src="img/scProcessing02.png" class="img-fluid">
+                    <p>Others:</p>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/WfaaSrKYS74" allowfullscreen></iframe>
+                    </div>
+                    <br>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/cfGrydjtcCQ" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="matlabHumanoidSimModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4>Biped robot simulation</h4>
+                    <p>The walking gaits were computed using genetic algorithm.</p>
+                    <p>Credit to: MATLAB Simulink</p>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/Q-QjSb_urJQ" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="gripper" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4>Origami gecko gripper</h4>
+                    <img src="img/gripper01.JPG" class="img-fluid">
+                    <img src="img/gripper02.JPG" class="img-fluid">
+                    <img src="img/gripper03.JPG" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="imageProcessing" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4>Image processing</h4>
+                    <img src="img/imageProcessing01.png" class="img-fluid">
+                    <img src="img/imageProcessing02.bmp" class="img-fluid">
+                    <img src="img/imageProcessing03.png" class="img-fluid">
+                    <img src="img/imageProcessing04.png" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="levitator" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4>Acoustic levitator</h4>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/rcka4FkwRSY" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    Credit to: <a href="https://www.instructables.com/id/Acoustic-Tractor-Beam/">Acoustic Tractor Beam</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="scaffoldingRobot" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4>Scaffolding robot</h4>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/Cx6CfihWEIo" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white text-center text-md-start">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-md-9">
+                    <h5>Bio</h5>
+                    <p>Engineer</p>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="text-uppercase mb-0">Links</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="mailto:johnmakmk@outlook.com" class="text-white">Email</a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/kin-wing-mak" class="text-white">LinkedIn</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            Made by MAK Kin Wing with
+            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"></script>
+</body>
+
+</html>
