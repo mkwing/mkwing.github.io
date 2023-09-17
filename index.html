@@ -2,14 +2,15 @@
 <html>
 
 <head>
-    <title>My Personal Website</title>
+    <title>MAK Kin Wing</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"></script>
     <style>
         .carousel-inner > .carousel-item > img {
             height: 60vh;
-            object-fit: cover;
+            object-fit: contain;
         }
         .carousel-control-prev {
             position: absolute;
@@ -23,8 +24,15 @@
             height: 60vh;
             padding: 10px;
         }
+        .modal-body > img {
+            display: block;
+            margin: 0 auto;
+        }
         .modal-body > p {
             margin-top: 5%;
+        }
+        button {
+            margin-top: 1%;
         }
     </style>
 </head>
@@ -32,17 +40,17 @@
 <body>
 
     <!-- Banner -->
-    <div class="row justify-content-around">
-        <div class="col-md-6 d-flex justify-content-center">
-            <!-- <h1 style="margin-left: 30%; margin-top: 20%; margin-bottom: 5%;">MAK Kin Wing</h1>
-            <p class="lead" style="margin-left: 30%;">Engineering | Robotics | Innovation </p> -->
-            <div style="margin-top: 20%;">
-                <h1>MAK Kin Wing</h1>
-                <p class="lead">Engineering | Robotics | Innovation </p>
+    <div class="container-fluid">
+        <div class="row justify-content-around" style="height: 100vh;">
+            <div class="col-md-6 d-flex justify-content-center">
+                <div style="margin-top: 30%;">
+                    <h1>MAK Kin Wing</h1>
+                    <p class="lead">Engineering | Robotics | Innovation </p>
+                </div>
             </div>
-        </div>
-        <div class="col-md-5 d-flex" style="height: 95vh;">
-            <img src="img/mk.png" alt="Profile Picture" class="img-fluid align-self-end">
+            <div class="col-md-6 d-flex">
+                <img src="img/mk.png" alt="Profile Picture" class="img-fluid align-self-end">
+            </div>
         </div>
     </div>
     <hr>
@@ -74,13 +82,23 @@
                     <!-- Inner -->
                     <div class="carousel-inner">
                         <div class="carousel-item active justify-content-center">
+                            <img src="img/slitting01.png" class="d-block w-100" alt="slitting">
+                            <h2 class="mt-5">Fabrication of wedge-shaped directional dry adhesive</h2>
+                            <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#slittingModal">MORE</button>
+                        </div>
+                        <div class="carousel-item justify-content-center">
+                            <img src="img/viko01.png" class="d-block w-100" alt="viko">
+                            <h2 class="mt-5">Design of gripper with vision-base tactile sensor</h2>
+                            <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#vikoModal">MORE</button>
+                        </div>
+                        <div class="carousel-item justify-content-center">
                             <img src="img/balanceCar.png" class="d-block w-100" alt="balanceCar">
-                            <h3 class="mt-5">Automatic balance car</h3>
+                            <h2 class="mt-5">Automatic balance car</h2>
                             <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#balanceCarModal">MORE</button>
                         </div>
                         <div class="carousel-item justify-content-center">
                             <img src="img/matlabHumanoidSim.png" class="d-block w-100" alt="matlabHumanoidSim">
-                            <h3 class="mt-5">Biped robot simulation</h3>
+                            <h2 class="mt-5">Biped robot simulation</h2>
                             <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#matlabHumanoidSimModal">MORE</button>
                         </div>
                     </div>
@@ -101,7 +119,7 @@
 
     <!-- Dashboard -->
     <div class="container my-5">
-        <h1 class="mb-5">Other work</h1>
+        <h1 class="mb-5">Other projects</h1>
         <div class="row">
             <div class="col-md-6">
                 <div class="card mb-5">
@@ -117,16 +135,14 @@
                         <h5 class="card-title">Origami gecko gripper</h5>
                         <p class="card-text">It is a gripper design inspired by compliant mechanism
                             which simplifies the process of manufacturing.</p>
-                        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#gripper">MORE</button>
+                        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#gripperModal">MORE</button>
                     </div>
                 </div>
                 <div class="card mb-5">
                     <img src="img/imageProcessing01.png" class="card-img-top" alt="imageProcessing01">
                     <div class="card-body">
                         <h5 class="card-title">Image processing</h5>
-                        <p class="card-text">This is one of the course work where students needed to apply image processing technique
-                            to practical uses such as A4 paper scanning, segmentation and face recognition.</p>
-                        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#imageProcessing">MORE</button>
+                        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#imageProcessingModal">MORE</button>
                     </div>
                 </div>
             </div>
@@ -136,16 +152,14 @@
                     <div class="card-body">
                         <h5 class="card-title">Acoustic levitator</h5>
                         <p class="card-text">Making use of ultrasound, small particles can be levitated in air.</p>
-                        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#levitator">MORE</button>
+                        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#levitatorModal">MORE</button>
                     </div>
                 </div>
                 <div class="card mb-5">
                     <img src="img/scaffoldingRobot.png" class="card-img-top" alt="scaffoldingRobot">
                     <div class="card-body">
                         <h5 class="card-title">Scaffolding robot</h5>
-                        <p class="card-text">This is one of the course work letting us to design an innovative mechatronic product.
-                            My group made a prototype of a scaffolding robot that can build scaffold.</p>
-                        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#scaffoldingRobot">MORE</button>
+                        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#scaffoldingRobotModal">MORE</button>
                     </div>
                 </div>
                 <div class="card mb-5">
@@ -153,6 +167,49 @@
                         <h5 class="card-title">Web design</h5>
                         <p class="card-text"></p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="slittingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4>Scalable Fabrication of Bioinspired Controllable Dry Adhesive by Roll-to-Roll Slitting</h4>
+                    <p>A novel and efficient method the fabricate the wedge-shaped adhesive was proposed.
+                        Check the <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/adem.202200377">Publication</a> for more details.</p>
+                    <p>Setup:</p>
+                    <img src="img/slitting01.png" class="img-fluid w-100">
+                    <img src="img/slitting02.png" class="img-fluid w-100">
+                    <p>Procedure:</p>
+                    <img src="img/slitting03.png" class="img-fluid w-100">
+                    <p>Fabricated adhesive:</p>
+                    <img src="img/slitting04.jpg" class="img-fluid">
+                    <img src="img/slitting05.png" class="img-fluid">
+                    <p>Application:</p>
+                    <img src="img/slitting06.png" class="img-fluid w-100">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="vikoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4>Viko: An Adaptive Gecko Gripper with Vision-based Tactile Sensor</h4>
+                    <p>A gripper was designed to combine the dry adhesive and vision-based tactile sensors.
+                        Check the <a href="https://ieeexplore.ieee.org/abstract/document/9561606">Publication</a> for more details.</p>
+                    <p>Gripper design:</p>
+                    <img src="img/viko01.png" class="img-fluid">
+                    <img src="img/viko02.png" class="img-fluid">
+                    <p>Sensor methodology:</p>
+                    <img src="img/viko03.png" class="img-fluid">
+                    <p>Experiment:</p>
+                    <img src="img/viko04.png" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -215,7 +272,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="gripper" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="gripperModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-body">
@@ -229,11 +286,13 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="imageProcessing" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="imageProcessingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-body">
                     <h4>Image processing</h4>
+                    <p>This is one of the course work where students needed to apply image processing technique
+                        to practical uses such as A4 paper scanning, segmentation and face recognition.</p>
                     <img src="img/imageProcessing01.png" class="img-fluid">
                     <img src="img/imageProcessing02.bmp" class="img-fluid">
                     <img src="img/imageProcessing03.png" class="img-fluid">
@@ -244,7 +303,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="levitator" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="levitatorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-body">
@@ -259,11 +318,13 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="scaffoldingRobot" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="scaffoldingRobotModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-body">
                     <h4>Scaffolding robot</h4>
+                    <p>This is one of the course work letting us to design an innovative mechatronic product.
+                        My group made a prototype of a scaffolding robot that can build scaffold.</p>
                     <div class="ratio ratio-16x9">
                         <iframe src="https://www.youtube.com/embed/Cx6CfihWEIo" frameborder="0" allowfullscreen></iframe>
                     </div>
@@ -275,13 +336,15 @@
     <!-- Footer -->
     <footer class="bg-secondary text-white text-center text-md-start">
         <div class="container p-4">
-            <div class="row">
-                <div class="col-md-9">
+            <div class="row justify-content-around">
+                <div class="col-md-6">
                     <h5>Bio</h5>
-                    <p>Engineer</p>
+                    <p>I am an engineer with a passion for innovation and problem-solving.
+                        My expertise lies in the field of robotics,
+                        where I have worked on developing cutting-edge technologies that push the boundaries of what is possible.</p>
                 </div>
-                <div class="col-md-3">
-                    <h5 class="text-uppercase mb-0">Links</h5>
+                <div class="col-md-2">
+                    <h5 class="text-uppercase mb-3">Links</h5>
 
                     <ul class="list-unstyled">
                         <li>
@@ -289,6 +352,9 @@
                         </li>
                         <li>
                             <a href="https://www.linkedin.com/in/kin-wing-mak" class="text-white">LinkedIn</a>
+                        </li>
+                        <li>
+                            <a href="https://scholar.google.com/citations?user=cWVVnvUAAAAJ&hl=en" class="text-white">Google scholar</a>
                         </li>
                     </ul>
                 </div>
@@ -300,8 +366,6 @@
             <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
         </div>
     </footer>
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"></script>
 </body>
 
 </html>
