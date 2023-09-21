@@ -7,6 +7,16 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.modal').on('hide.bs.modal', function (e) {
+                alert("Hello World!");
+                $('.modal').find('iframe').each(function(){
+                    $(this).attr('src', $(this).attr('src'));
+                });
+            });
+        });
+    </script>
     <style>
         .carousel-inner > .carousel-item > img {
             height: 60vh;
@@ -39,6 +49,11 @@
 
 <body>
 
+<div class="text-center">
+  <a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#ModalWarning">Launch Modal
+    Warning <i class="far fa-eye ml-1 text-white"></i></a>
+</div>
+    
     <!-- Banner -->
     <div class="container-fluid">
         <div class="row justify-content-around" style="height: 100vh;">
@@ -101,6 +116,11 @@
                             <h2 class="mt-5">Biped robot simulation</h2>
                             <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#matlabHumanoidSimModal">MORE</button>
                         </div>
+                        <!-- <div class="carousel-item justify-content-center">
+                            <img src="img/anydrink.png" class="d-block w-100" alt="anydrink">
+                            <h2 class="mt-5">Biped robot simulation</h2>
+                            <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#anydrinkModal">MORE</button>
+                        </div> -->
                     </div>
                     <!-- Controls -->
                     <button class="carousel-control-prev" type="button" data-mdb-target="#carousel" data-mdb-slide="prev">
@@ -173,7 +193,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="slittingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="slittingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-body">
@@ -190,6 +210,10 @@
                     <img src="img/slitting05.png" class="img-fluid">
                     <p>Application:</p>
                     <img src="img/slitting06.png" class="img-fluid w-100">
+                    <p>Grasping demo:</p>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/Og_XmXJREnc" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -210,6 +234,10 @@
                     <img src="img/viko03.png" class="img-fluid">
                     <p>Experiment:</p>
                     <img src="img/viko04.png" class="img-fluid">
+                    <p>Contact area sensing:</p>
+                    <div class="ratio ratio-16x9">
+                        <iframe class="video" src="https://www.youtube.com/embed/HLIfxE0I514" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
